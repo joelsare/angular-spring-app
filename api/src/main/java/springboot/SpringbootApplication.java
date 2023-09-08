@@ -12,7 +12,7 @@ import springboot.services.food.FoodService;
 public class SpringbootApplication implements CommandLineRunner {
 	@Autowired private FoodService foodService;
 
-	private final Logger logger = LoggerFactory.getLogger(SpringbootApplication.class);
+	private final Logger log = LoggerFactory.getLogger(SpringbootApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootApplication.class, args);
