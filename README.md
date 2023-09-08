@@ -18,3 +18,5 @@
 - In IntelliJ IDEA, press `Run 'SpringbootApplication'`
 - In the VSCode terminal, run `ng serve`
 - Open http://localhost:4200/
+
+![image](https://github.com/joelsare/angular-spring-app/assets/60672302/29384757-3c49-4b88-8e7f-951fa789fa94)
