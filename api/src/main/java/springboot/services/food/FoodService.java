@@ -11,11 +11,13 @@ public class FoodService {
 
     private final FoodRepository foodRepository;
 
-    public long createFood(String name) {
-        return foodRepository.save(new Food(name)).getId();
+    public Food createFood(String name) {
+        return foodRepository.save(new Food(name));
     }
 
     public List<Food> getAllFood() {
         return foodRepository.findAll();
     }
+
+    public void deleteFood(long id) { foodRepository.deleteById(id); }
 }

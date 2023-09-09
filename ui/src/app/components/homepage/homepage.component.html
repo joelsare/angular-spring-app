@@ -1,3 +1,45 @@
 <div class="main-container">
-    <li *ngFor="let f of food"> <b>id:</b> {{ f.id }} <b>name:</b> {{ f.name }}</li>
+    <div class="row">
+        <mat-form-field appearance="outline">
+            <input matInput [(ngModel)]="inputVal">
+            <mat-label>Food name</mat-label>
+        </mat-form-field>
+
+        <button mat-raised-button (click)="createFood()" [disabled]="!inputVal" color="primary" class="create-button">
+            Create {{ inputVal }}
+        </button>
+    </div>
+
+    <h3>Values from database:</h3>
+    <table mat-table [dataSource]="food" class="mat-elevation-z8">
+
+        <!-- id column -->
+        <ng-container matColumnDef="idColumn">
+            <th mat-header-cell *matHeaderCellDef> id </th>
+            <td mat-cell *matCellDef="let food"> {{food.id}} </td>
+        </ng-container>
+
+        <!-- name column -->
+        <ng-container matColumnDef="nameColumn">
+            <th mat-header-cell *matHeaderCellDef> name </th>
+            <td mat-cell *matCellDef="let food"> {{food.name}} </td>
+        </ng-container>
+
+        <!-- delete column -->
+        <ng-container matColumnDef="deleteColumn">
+            <th mat-header-cell *matHeaderCellDef> </th>
+            <td mat-cell *matCellDef="let row" class="header-align-right">
+                <button (click)="deleteFood(row)" mat-icon-button matTooltip="Delete {{row.name}}">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <button (click)="editFood(row)" mat-icon-button matTooltip="Edit {{row.name}}">
+                    <mat-icon>edit</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
 </div>
