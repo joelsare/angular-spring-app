@@ -22,7 +22,6 @@ public class FoodController {
 
     @PostMapping()
     public ResponseEntity<Food> createFood(@RequestBody String name) {
-        log.info("creating food with name: " + name);
         return ResponseEntity.ok(foodService.createFood(name));
     }
 

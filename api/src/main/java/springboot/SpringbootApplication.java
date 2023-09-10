@@ -19,9 +19,5 @@ public class SpringbootApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args)  {
-		foodService.createFood("apple");
-		foodService.createFood("banana");
-		foodService.createFood("strawberry");
-	}
+	public void run(String... args)  { }
 }
