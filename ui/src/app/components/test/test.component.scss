@@ -1,0 +1,17 @@
+.main-container {
+  margin: 1em;
+
+  .toolbar {
+    display: none;
+    position: absolute;
+    height: 45px;
+    width: 220px;
+    background-color: #212121;
+    border-radius: 0.25rem;
+    transition: 0.2s;
+  }
+
+  .toolbar.active {
+    display: block;
+  }
+}
